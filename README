@@ -1,0 +1,40 @@
+Features
+========
+
+* bottom 2 rows of pads are steps in the sequencer 
+    * 16 steps for duplet sequences
+    * 12 steps for triplet sequences (first 6 pads of each row)
+* each step holds a list of pitch/value pairs
+* at each step, the pad corresponding to that step lights up yellow
+* at each step, any pads corresponding to a note being played lights up yellow
+* When the last step in the sequence is reached, the step pad lights up red
+* when a step pad (bottom two rows) is touched, all notes in that step
+  light up red
+* Triplet and duplet sequences are running in parallel
+* Slider 0 controls which sequence is currently being edited
+* Button 0 toggles between duplet and triplet view. The button lights up
+  yellow in duplet mode, red in triplet
+* double-tapping a step pad sets that pad to be the end of the sequence
+    * the pad could be in a duplet or triplet sequence
+* to add a note to a step:
+    1. Press the desired step
+    2. While holding the step pad, press a note pad
+    3. While holding the note pad, release the step pad
+    4. The Value stored for that note is whatever the pad value was
+       when the step pad was released
+* to remove a note from a step:
+    1. Press the desired step
+    2. All the notes in that step will light up
+    3. Press and release the note you want to remove
+    4. Release the step pad
+
+Data Structures
+===============
+
+* seqNote
+    * note
+    * value
+* sequence
+
+Known Issues
+============
