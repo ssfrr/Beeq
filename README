@@ -4,7 +4,7 @@ Features
 * bottom 2 rows of pads are steps in the sequencer 
     * 16 steps for duplet sequences
     * 12 steps for triplet sequences (first 6 pads of each row)
-* each step holds a list of pitch/value pairs
+* each step holds a pitch/value pair
 * each step that has notes programmed to it is lit red
 * at each step, the pad corresponding to that step lights up yellow
 * at each step, any pads corresponding to a note being played lights up yellow
@@ -26,19 +26,20 @@ Features
 * Pressing a note pad without pressing a step pad plays that note
 * updating a step updates the step LED
 * switching between duplet/triplet mode refreshes the step LEDs
+* double-tapping a step pad sets that pad to be the end of the sequence
+    * the pad could be in a duplet or triplet sequence
 
 ToDo
 ====
-* double-tapping a step pad sets that pad to be the end of the sequence
-    * the pad could be in a duplet or triplet sequence
-* the last step in the sequence is lit yellow
-    * if the last step has notes assigned, it blinks yellow/red
-* changing channels updates the step LEDs
+* Slider 1 controls which page of the sequence is being edited
 * changing the page updates the step LEDs
+* Slider 0 controls which channel is being edited
+* changing channels updates the step LEDs
+* each step can have multiple notes assigned to it (polyphony)
 * when a step pad (bottom two rows) is touched, all notes in that step
   light up yellow
-* Slider 0 controls which channel is being edited
-* Slider 1 controls which page of the sequence is being edited
+* the last step in the sequence is lit yellow
+    * if the last step has notes assigned, it blinks yellow/red
 
 Data Structures
 ===============
@@ -50,3 +51,4 @@ Data Structures
 
 Known Issues
 ============
+* LEDs don't light up properly when step length is 1 (duplet or triplet)
