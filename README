@@ -5,17 +5,13 @@ Features
     * 16 steps for duplet sequences
     * 12 steps for triplet sequences (first 6 pads of each row)
 * each step holds a list of pitch/value pairs
+* each step that has notes programmed to it is lit red
 * at each step, the pad corresponding to that step lights up yellow
 * at each step, any pads corresponding to a note being played lights up yellow
-* When the last step in the sequence is reached, the step pad lights up red
-* when a step pad (bottom two rows) is touched, all notes in that step
-  light up red
 * Triplet and duplet sequences are running in parallel
-* Slider 0 controls which sequence is currently being edited
 * Button 0 toggles between duplet and triplet view. The button lights up
-  yellow in duplet mode, red in triplet
-* double-tapping a step pad sets that pad to be the end of the sequence
-    * the pad could be in a duplet or triplet sequence
+  yellow in duplet mode, red in triplet. The colors of the sequence row are
+  also inverted when in triplet mode
 * to add a note to a step:
     1. Press the desired step
     2. While holding the step pad, press a note pad
@@ -27,6 +23,22 @@ Features
     2. All the notes in that step will light up
     3. Press and release the note you want to remove
     4. Release the step pad
+* Pressing a note pad without pressing a step pad plays that note
+* updating a step updates the step LED
+* switching between duplet/triplet mode refreshes the step LEDs
+
+ToDo
+====
+* double-tapping a step pad sets that pad to be the end of the sequence
+    * the pad could be in a duplet or triplet sequence
+* the last step in the sequence is lit yellow
+    * if the last step has notes assigned, it blinks yellow/red
+* changing channels updates the step LEDs
+* changing the page updates the step LEDs
+* when a step pad (bottom two rows) is touched, all notes in that step
+  light up yellow
+* Slider 0 controls which channel is being edited
+* Slider 1 controls which page of the sequence is being edited
 
 Data Structures
 ===============
