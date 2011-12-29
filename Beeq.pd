@@ -1,4 +1,4 @@
-#N canvas 822 417 348 175 10;
+#N canvas 830 246 348 175 10;
 #N canvas 782 584 409 379 manta_interface 0;
 #X obj 133 210 route pad;
 #X obj 124 103 manta;
@@ -43,7 +43,7 @@
 #X connect 4 1 3 0;
 #X connect 5 0 4 0;
 #X restore 105 44 pd manta_init;
-#N canvas 684 492 688 476 led_control 0;
+#N canvas 50 442 688 476 led_control 0;
 #X obj 36 425 outlet;
 #X obj 101 57 + 1;
 #X msg 101 79 button \$1 0;
@@ -112,7 +112,7 @@
 #X restore 105 275 pd note_led;
 #X obj 484 46 r \$0-step_enable;
 #X obj 506 68 r \$0-step;
-#X obj 506 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 506 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 506 111 button \$1 1;
 #X text 449 22 blink button 1 when running;
@@ -234,20 +234,24 @@
 #X restore 133 230 pd handle_pad_continuous;
 #X obj 151 125 bang;
 #X obj 151 147 s \$0-frame_in;
-#N canvas 38 674 341 283 handle_slider 0;
+#N canvas 828 426 341 283 handle_slider 0;
 #X obj 79 31 inlet;
 #X obj 79 57 route 0 1;
 #X obj 104 105 / 512;
 #X obj 104 128 int;
 #X obj 104 152 change;
 #X obj 104 81 unpack f f;
-#X obj 104 175 s \$0-page_select;
+#X obj 131 198 s \$0-page_select;
+#X obj 104 175 t b f;
+#X obj 104 221 s \$0-refresh_step_leds;
 #X connect 0 0 1 0;
 #X connect 1 1 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 4 0 6 0;
+#X connect 4 0 7 0;
 #X connect 5 0 2 0;
+#X connect 7 0 8 0;
+#X connect 7 1 6 0;
 #X restore 142 180 pd handle_slider;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;

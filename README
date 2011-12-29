@@ -28,11 +28,11 @@ Features
 * switching between duplet/triplet mode refreshes the step LEDs
 * double-tapping a step pad sets that pad to be the end of the sequence
     * the pad could be in a duplet or triplet sequence
+* Slider 1 controls which page of the sequence is being edited
+* changing the page updates the step LEDs
 
 ToDo
 ====
-* Slider 1 controls which page of the sequence is being edited
-* changing the page updates the step LEDs
 * Slider 0 controls which channel is being edited
 * changing channels updates the step LEDs
 * each step can have multiple notes assigned to it (polyphony)
