@@ -4,32 +4,29 @@
 #X obj 63 349 pack f f;
 #X obj 63 70 t f f;
 #X msg 63 373 pad \$2 \$1;
-#X obj 90 96 pad2step;
-#X obj 108 237 tabread;
-#X obj 121 150 tableselector;
-#X obj 108 259 != 0;
+#X obj 108 184 tabread;
+#X obj 108 206 != 0;
 #X obj 108 321 * 1;
-#X obj 223 158 == 0;
-#X obj 223 180 + 1;
-#X text 216 223 If the value stored in a given sequencer slot is zero
+#X obj 123 273 == 0;
+#X obj 123 295 + 1;
+#X text 216 176 If the value stored in a given sequencer slot is zero
 \, clear the LED. If the value is nonzero \, set the LED to yellow
 if we're displaying a triplet sequence \, and red if we're displaying
 a duplet sequence;
-#X obj 223 53 inlet;
 #X text 53 19 pad index;
-#X text 185 28 sequence_type_triplet;
+#X obj 123 248 r \$1-sequence_type_triplet;
+#X obj 121 150 tableselector \$1;
+#X obj 108 121 pad2step \$1;
 #X connect 0 0 3 0;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
-#X connect 3 1 5 0;
+#X connect 3 1 14 0;
 #X connect 4 0 1 0;
 #X connect 5 0 6 0;
-#X connect 6 0 8 0;
-#X connect 7 1 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 1;
 #X connect 8 0 9 0;
-#X connect 9 0 2 1;
-#X connect 10 0 11 0;
-#X connect 11 0 9 1;
-#X connect 13 0 5 1;
-#X connect 13 0 7 0;
-#X connect 13 0 10 0;
+#X connect 9 0 7 1;
+#X connect 12 0 8 0;
+#X connect 13 1 5 0;
+#X connect 14 0 5 0;

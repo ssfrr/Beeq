@@ -1,4 +1,4 @@
-#N canvas 505 279 476 368 10;
+#N canvas 634 206 548 368 10;
 #X obj 99 46 inlet;
 #X obj 99 71 moses 8;
 #X obj 114 164 select 0 1;
@@ -8,10 +8,11 @@
 #X text 130 215 2nd seq row;
 #X obj 312 310 outlet;
 #X obj 312 133 - 8;
-#X obj 195 54 inlet;
 #X text 83 20 pad number;
-#X text 171 25 sequence_type_triplet;
 #X text 310 330 step number;
+#X obj 114 136 r \$1-sequence_type_triplet;
+#X obj 327 264 pageoffset \$1;
+#X obj 312 288 +;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 1 1 8 0;
@@ -19,6 +20,8 @@
 #X connect 2 1 4 0;
 #X connect 3 0 5 1;
 #X connect 4 0 5 1;
-#X connect 5 0 7 0;
-#X connect 8 0 7 0;
-#X connect 9 0 2 0;
+#X connect 5 0 13 0;
+#X connect 8 0 13 0;
+#X connect 11 0 2 0;
+#X connect 12 0 13 1;
+#X connect 13 0 7 0;
