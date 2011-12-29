@@ -35,11 +35,11 @@ ToDo
 ====
 * Slider 0 controls which channel is being edited
 * changing channels updates the step LEDs
+* the last step in the sequence is lit yellow
+    * if the last step has notes assigned, it blinks yellow/red
 * each step can have multiple notes assigned to it (polyphony)
 * when a step pad (bottom two rows) is touched, all notes in that step
   light up yellow
-* the last step in the sequence is lit yellow
-    * if the last step has notes assigned, it blinks yellow/red
 
 Data Structures
 ===============
