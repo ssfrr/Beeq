@@ -1,5 +1,5 @@
-#N canvas 777 426 348 175 10;
-#N canvas 782 584 409 379 manta_interface 1;
+#N canvas 822 417 348 175 10;
+#N canvas 782 584 409 379 manta_interface 0;
 #X obj 133 210 route pad;
 #X obj 124 103 manta;
 #X obj 124 269 route pad button;
@@ -9,7 +9,7 @@
 #X obj 107 53 unpack f f;
 #X obj 107 79 spigot;
 #X text 158 82 send the button id through on note-on;
-#X obj 134 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 134 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 134 219 s \$0-sequence_type_triplet;
 #X obj 127 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -53,7 +53,6 @@
 #X obj 116 111 mux;
 #X obj 155 316 outlet;
 #X obj 155 275 f 0;
-#X obj 116 162 t f f b;
 #X obj 131 81 r \$0-sequence_type_triplet;
 #X obj 71 255 pack f f;
 #X obj 116 207 r \$0-sequence_type_triplet;
@@ -61,22 +60,25 @@
 #X msg 71 276 pad \$2 \$1;
 #X text 27 229 select color;
 #X text 188 271 reset the previous step's LED;
-#X obj 116 137 step2pad \$0;
+#X obj 116 158 step2pad \$0;
 #X obj 155 295 resetstepled \$0;
+#X obj 116 133 t f b;
+#X obj 116 183 t f f;
 #X connect 0 0 2 1;
 #X connect 1 0 2 0;
-#X connect 2 0 13 0;
-#X connect 4 0 14 0;
-#X connect 5 0 7 0;
-#X connect 5 1 4 1;
-#X connect 5 2 4 0;
-#X connect 6 0 2 2;
-#X connect 7 0 10 0;
-#X connect 8 0 9 0;
-#X connect 9 0 7 1;
-#X connect 10 0 3 0;
-#X connect 13 0 5 0;
-#X connect 14 0 3 0;
+#X connect 2 0 14 0;
+#X connect 4 0 13 0;
+#X connect 5 0 2 2;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 1;
+#X connect 9 0 3 0;
+#X connect 12 0 15 0;
+#X connect 13 0 3 0;
+#X connect 14 0 12 0;
+#X connect 14 1 4 0;
+#X connect 15 0 6 0;
+#X connect 15 1 4 1;
 #X restore 106 180 pd step_led;
 #X obj 101 36 r \$0-sequence_type_triplet;
 #X text 46 14 handle the sequence type indicator LED;
@@ -110,7 +112,7 @@
 #X restore 105 275 pd note_led;
 #X obj 484 46 r \$0-step_enable;
 #X obj 506 68 r \$0-step;
-#X obj 506 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 506 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 506 111 button \$1 1;
 #X text 449 22 blink button 1 when running;

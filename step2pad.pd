@@ -14,6 +14,10 @@
 #X obj 132 93 -;
 #X obj 147 68 pageoffset \$1;
 #X obj 132 119 boundscheck 0 15;
+#X obj 241 57 select 0 1;
+#X obj 241 32 r \$1-sequence_type_triplet;
+#X obj 241 83 f 15;
+#X obj 269 83 f 11;
 #X connect 0 0 12 0;
 #X connect 1 0 6 0;
 #X connect 1 1 5 0;
@@ -29,3 +33,8 @@
 #X connect 12 0 14 0;
 #X connect 13 0 12 1;
 #X connect 14 0 1 0;
+#X connect 15 0 17 0;
+#X connect 15 1 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 14 2;
+#X connect 18 0 14 2;
